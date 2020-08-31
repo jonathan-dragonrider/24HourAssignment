@@ -11,24 +11,48 @@ namespace JAKs24HourSocialMedia.Services
     class CommentService
     {
         private readonly int _id;
-        public CommentService(int userId)
+        private readonly int _postid;
+        public CommentService(int userId, int postId)
         {
             _id = userId;
+            _postid = postId;
+
         }
         public bool CreateComment(CommentCreate model)
         {
             var entity = new Comment()
             {
-                OwnerId = _id,
-                Text = model.Title,
-                Content = model.Content,
-                CreatedUtc = DateTimeOffset.Now
+                Text = model.Text,
+                Author = _id,
+                CommentPost = _postid
             };
 
             using (var ctx = new ApplicationDbContext())
             {
-                ctx.Notes.Add(entity);
+                ctx.Comments.Add(entity);
                 return ctx.SaveChanges() == 1;
+            }
+        }
+        public IEnumerable<CommentListItems> GetComments()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Comments
+                        .Where(e => e.Id == _id)
+                        .Select(
+                            e =>
+                                new CommentListItems
+                                {
+                                    Id = e.Id,
+                                    Text = e.Text,
+                                    Author = e.Author,
+                                    CommentPost = e.CommentPost
+                                }
+                        );
+
+                return query.ToArray();
             }
         }
     }

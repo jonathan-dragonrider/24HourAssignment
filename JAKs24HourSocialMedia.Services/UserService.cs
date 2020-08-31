@@ -24,7 +24,6 @@ namespace JAKs24HourSocialMedia.Services
             var entity =
                 new User()
                 {
-                    Id = _userId,
                     Name = model.Name,
                     Email = model.Email,
                 };
@@ -35,30 +34,31 @@ namespace JAKs24HourSocialMedia.Services
                 return ctx.SaveChanges() == 1;
             }
 
-            IEnumerable<UserListItems> GetUsers()
+
+
+        }
+
+        public IEnumerable<UserListItems> GetUsers()
+        {
+
+            using (var ctx = new ApplicationDbContext())
             {
+                var query =
+                    ctx
+                    .Users
+                    .Where(e => e.Id == _userId)
+                    .Select(
+                        e =>
+                        new UserListItems
+                        {
+                            Id = e.Id,
+                            Name = e.Name,
+                            Email = e.Email
 
-                using (var ctx = new ApplicationDbContext())
-                {
-                    var query =
-                        ctx
-                        .Users
-                        .Where(e => e.Id == _userId)
-                        .Select(
-                            e =>
-                            new UserListItems
-                            {
-                                Id = e.Id,
-                                Name = e.Name,
-                                Email = e.Email
-
-                            }
-                            );
-                }
+                        }
+                        );
+                return query.ToArray();
             }
-
-
-
         }
     }
 }

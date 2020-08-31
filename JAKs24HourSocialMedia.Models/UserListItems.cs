@@ -6,7 +6,11 @@ using System.Threading.Tasks;
 
 namespace JAKs24HourSocialMedia.Models
 {
-    class UserListItems
+   public class UserListItems
     {
+        public Guid Id { get; set; }
+        public string Name { get; set; }
+
+        public string Email { get; set; }
     }
 }

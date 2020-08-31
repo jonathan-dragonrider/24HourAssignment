@@ -33,7 +33,7 @@ namespace JAKs24HourSocialMedia.Data
             return new ApplicationDbContext();
         }
 
-        //This is where DbSet<> goes
+        public DbSet<Post> Posts { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {

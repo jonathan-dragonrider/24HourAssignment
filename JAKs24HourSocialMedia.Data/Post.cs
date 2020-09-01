@@ -19,7 +19,7 @@ namespace JAKs24HourSocialMedia.Data
         [Required]
         public string Text { get; set; }
 
-        [ForeignKey("Id")]
+        [ForeignKey("User")]
         public Guid Id { get; set; } 
     }
 }

@@ -24,7 +24,7 @@ namespace JAKs24HourSocialMedia.Services
                 var query =
                     ctx
                         .Posts
-                        .Where(e => e.UserId == _userId)
+                        .Where(e => e.Id == _userId)
                         .Select(
                             e =>
                                 new PostListItem
@@ -44,7 +44,7 @@ namespace JAKs24HourSocialMedia.Services
             {
                 Title = model.Title,
                 Text = model.Text,
-                UserId = _userId
+                Id = _userId
             };
 
             using (var ctx = new ApplicationDbContext())

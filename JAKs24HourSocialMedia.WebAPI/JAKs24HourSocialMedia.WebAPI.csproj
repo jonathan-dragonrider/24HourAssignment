@@ -315,6 +315,10 @@
       <Project>{14635309-e774-4462-936e-3e5596cf27e6}</Project>
       <Name>JAKs24HourSocialMedia.Models</Name>
     </ProjectReference>
+    <ProjectReference Include="..\JAKs24HourSocialMedia.RealData\JAKs24HourSocialMedia.RealData.csproj">
+      <Project>{DB80E385-FB9A-4274-882E-658391DECD39}</Project>
+      <Name>JAKs24HourSocialMedia.RealData</Name>
+    </ProjectReference>
     <ProjectReference Include="..\JAKs24HourSocialMedia.Services\JAKs24HourSocialMedia.Services.csproj">
       <Project>{422c5a7c-1fe5-4a4f-8933-e660b4f12e5e}</Project>
       <Name>JAKs24HourSocialMedia.Services</Name>

@@ -1,4 +1,4 @@
-﻿using JAKs24HourSocialMedia.Data;
+﻿using JAKs24HourSocialMedia.RealData;
 using JAKs24HourSocialMedia.Models;
 using System;
 using System.Collections.Generic;
@@ -22,8 +22,8 @@ namespace JAKs24HourSocialMedia.Services
         {
             var entity = new Like()
             {
-                Like = model.Like,
-                LikerId = _id,
+                Liker = model.Like,
+                UserId = _id,
                 PostId = _postid
             };
 
@@ -33,26 +33,7 @@ namespace JAKs24HourSocialMedia.Services
                 return ctx.SaveChanges() == 1;
             }
         }
-        public IEnumerable<CommentListItems> GetComments()
-        {
-            using (var ctx = new ApplicationDbContext())
-            {
-                var query =
-                    ctx
-                        .likes
-                        .Where(e => e.Id == _id)
-                        .Select(
-                            e =>
-                                new CommentListItems
-                                {
-                                    Id = e.Id,
-                                    Text = e.Text,
-                                    Author = e.Author,
-                                    CommentPost = e.CommentPost
-                                }
-                        );
-                return query.ToArray();
-            }
-        }
+
     }
 }
+

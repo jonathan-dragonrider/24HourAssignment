@@ -1,4 +1,4 @@
-﻿using JAKs24HourSocialMedia.Data;
+﻿using JAKs24HourSocialMedia.RealData;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -60,7 +60,7 @@ namespace JAKs24HourSocialMedia.WebAPI.Controllers
                 Like like = await _context.Likes.FindAsync(id);
                 if (like != null)
                 {
-                    like.like = updatedLike.Like;
+                    like.Liker = updatedLike.Liker;
 
                     await _context.SaveChangesAsync();
                     return Ok();

@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNet.Identity;
+﻿using JAKs24HourSocialMedia.RealData;
+using Microsoft.AspNet.Identity;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;

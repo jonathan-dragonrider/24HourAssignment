@@ -7,6 +7,7 @@ using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
 using Microsoft.AspNet.Identity.Owin;
 
+
 namespace JAKs24HourSocialMedia.Data
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
@@ -33,7 +34,10 @@ namespace JAKs24HourSocialMedia.Data
             return new ApplicationDbContext();
         }
 
-        //This is where DbSet<> goes
+        public DbSet<Post> Posts { get; set; }
+
+        public DbSet<Comment> Comments { get; set; }
+        public DbSet<Like> Likes { get; set; }
 
         public DbSet<User> Users { get; set; }
 

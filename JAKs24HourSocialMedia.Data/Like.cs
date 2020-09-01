@@ -1,25 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace JAKs24HourSocialMedia.Data
 {
-    public class Post
+    public class Like
     {
         [Key]
         public int PostId { get; set; }
 
         [Required]
-        public string Title { get; set; }
+        public Post LikedPost { get; set; }//Bool?
 
         [Required]
-        public string Text { get; set; }
+        public int LikerId { get; set; }
 
-        [ForeignKey("User")]
-        public Guid Id { get; set; } 
+        [Required]
+        public User Like { get; set; }//bool
     }
 }

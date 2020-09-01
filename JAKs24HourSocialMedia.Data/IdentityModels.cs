@@ -35,8 +35,6 @@ namespace JAKs24HourSocialMedia.Data
 
         //This is where DbSet<> goes
 
-        public DbSet<User> Users { get; set; }
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

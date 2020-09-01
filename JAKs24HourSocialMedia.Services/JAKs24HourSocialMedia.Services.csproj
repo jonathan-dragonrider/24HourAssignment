@@ -55,21 +55,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UserService.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\JAKs24HourSocialMedia.Data\JAKs24HourSocialMedia.Data.csproj">
-      <Project>{136c8c7f-671b-448e-9134-ca3ab960b4d8}</Project>
-      <Name>JAKs24HourSocialMedia.Data</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\JAKs24HourSocialMedia.Models\JAKs24HourSocialMedia.Models.csproj">
-      <Project>{14635309-e774-4462-936e-3e5596cf27e6}</Project>
-      <Name>JAKs24HourSocialMedia.Models</Name>
-    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -25,6 +25,13 @@ namespace JAKs24HourSocialMedia.Services
                 Text = model.Text,
                 UserId = _userId
             };
+
+            using (var ctx = new ApplicationDbContext())
+            {
+                ctx.Posts.Add(entity);
+                return ctx.SaveChanges() == 1;
+            }
+
         }
 
     }

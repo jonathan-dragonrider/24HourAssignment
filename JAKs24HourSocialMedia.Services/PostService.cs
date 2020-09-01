@@ -17,6 +17,27 @@ namespace JAKs24HourSocialMedia.Services
             _userId = id;
         }
 
+        public IEnumerable<PostListItem> GetPosts()
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var query =
+                    ctx
+                        .Posts
+                        .Where(e => e.UserId == _userId)
+                        .Select(
+                            e =>
+                                new PostListItem
+                                {
+                                    PostId = e.PostId,
+                                    Title = e.Title,
+                                }
+                        );
+
+                return query.ToArray();
+            }
+        }
+
         public bool CreatePost(PostCreate model)
         {
             var entity = new Post()

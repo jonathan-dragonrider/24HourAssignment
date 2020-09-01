@@ -8,5 +8,9 @@ namespace JAKs24HourSocialMedia.Data
 {
     class Like
     {
+        public int PostId { get; set; }
+        public Post LikedPost { get; set; }//Bool?
+        public int LikerId { get; set; }
+        public User Like { get; set; }
     }
 }

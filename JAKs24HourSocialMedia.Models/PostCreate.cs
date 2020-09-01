@@ -1,25 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace JAKs24HourSocialMedia.Data
+namespace JAKs24HourSocialMedia.Models
 {
-    public class Post
+    public class PostCreate
     {
-        [Key]
-        public int PostId { get; set; }
-
         [Required]
+        [MinLength(1, ErrorMessage = "Must have at least one character.")]
+        [MaxLength(100, ErrorMessage = "Max length 100 characters.")]
         public string Title { get; set; }
 
         [Required]
+        [MaxLength(8000, ErrorMessage = "Max length 8000 characters.")]
         public string Text { get; set; }
-
-        [ForeignKey("User")]
-        public Guid Id { get; set; } 
     }
 }

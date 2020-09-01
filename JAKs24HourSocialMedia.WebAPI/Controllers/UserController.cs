@@ -38,5 +38,25 @@ namespace JAKs24HourSocialMedia.WebAPI.Controllers
 
             return Ok();
         }
+
+        public IHttpActionResult Get(Guid id)
+        {
+            UserService userService = CreateUserService();
+            var note = userService.GetUserById(id);
+            return Ok(note);
+        }
+
+        public IHttpActionResult Put(UserEdit user)
+        {
+            if (!ModelState.IsValid)
+                return BadRequest(ModelState);
+
+            var service = CreateUserService();
+
+            if (!service.UpdateUser(user)) 
+                return InternalServerError();
+
+            return Ok();
+        }
     }
 }

@@ -59,6 +59,58 @@ namespace JAKs24HourSocialMedia.Services
                         );
                 return query.ToArray();
             }
+
+
+        }
+
+        public UserDetails GetUserById(Guid id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Users
+                        .Single(e => e.Id == _userId);
+                return
+                    new UserDetails
+                    {
+                        Id = entity.Id,
+                        Name = entity.Name,
+                        Email = entity.Email,
+
+                    };
+            }
+        }
+
+        public bool UpdateUser(UserEdit model)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Users
+                        .Single(e => e.Id == model.Id);
+
+                entity.Name = model.Name;
+                entity.Email = model.Email;
+
+                return ctx.SaveChanges() == 1;
+            }
+        }
+
+        public bool DeleteUser(Guid Id)
+        {
+            using (var ctx = new ApplicationDbContext())
+            {
+                var entity =
+                    ctx
+                        .Users
+                        .Single(e => e.Id == _userId);
+
+                ctx.Users.Remove(entity);
+
+                return ctx.SaveChanges() == 1;
+            }
         }
     }
 }

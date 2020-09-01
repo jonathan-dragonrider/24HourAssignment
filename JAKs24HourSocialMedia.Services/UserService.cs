@@ -24,6 +24,7 @@ namespace JAKs24HourSocialMedia.Services
             var entity =
                 new User()
                 {
+                    Id= _userId,
                     Name = model.Name,
                     Email = model.Email,
                 };

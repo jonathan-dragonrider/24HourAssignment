@@ -58,5 +58,15 @@ namespace JAKs24HourSocialMedia.WebAPI.Controllers
 
             return Ok();
         }
+
+        public IHttpActionResult Delete(Guid id)
+        {
+            var service = CreateUserService();
+
+            if (!service.DeleteUser(id))
+                return InternalServerError();
+
+            return Ok();
+        }
     }
 }

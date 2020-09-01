@@ -56,6 +56,8 @@
   <ItemGroup>
     <Compile Include="CommentCreate.cs" />
     <Compile Include="CommentListItems.cs" />
+    <Compile Include="LikeCreate.cs" />
+    <Compile Include="LikeListItems.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

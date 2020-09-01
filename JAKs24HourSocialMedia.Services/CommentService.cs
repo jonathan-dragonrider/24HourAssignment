@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace JAKs24HourSocialMedia.Services
 {
-    class CommentService
+    public class CommentService
     {
         private readonly int _id;
         private readonly int _postid;

@@ -60,7 +60,7 @@ namespace JAKs24HourSocialMedia.WebAPI.Controllers
                 Like like = await _context.Likes.FindAsync(id);
                 if (like != null)
                 {
-                    like.Id = updatedLike.Id;
+                    like.UserId = updatedLike.UserId;
 
                     await _context.SaveChangesAsync();
                     return Ok();

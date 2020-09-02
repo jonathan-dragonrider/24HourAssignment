@@ -8,9 +8,9 @@ namespace JAKs24HourSocialMedia.Services
 {
     public class PostService
     {
-        private readonly Guid _userId;
+        private readonly int _userId;
 
-        public PostService(Guid id)
+        public PostService(int id)
         {
             _userId = id;
         }
@@ -22,7 +22,7 @@ namespace JAKs24HourSocialMedia.Services
                 var query =
                     ctx
                         .Posts
-                        .Where(e => e.Id == _userId)
+                        .Where(e => e.UserId == _userId)
                         .Select(
                             e =>
                                 new PostListItem
@@ -42,7 +42,7 @@ namespace JAKs24HourSocialMedia.Services
             {
                 Title = model.Title,
                 Text = model.Text,
-                Id = _userId
+                UserId = _userId
             };
 
             using (var ctx = new ApplicationDbContext())

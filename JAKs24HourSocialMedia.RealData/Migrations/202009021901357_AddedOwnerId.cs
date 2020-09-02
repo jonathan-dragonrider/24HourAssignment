@@ -12,12 +12,21 @@
             DropIndex("dbo.Like", new[] { "Id" });
             DropIndex("dbo.Post", new[] { "Id" });
             DropPrimaryKey("dbo.User");
+
             AddColumn("dbo.User", "OwnerId", c => c.Guid(nullable: false));
-            AlterColumn("dbo.Like", "Id", c => c.Int(nullable: false));
-            AlterColumn("dbo.Post", "Id", c => c.Int(nullable: false));
-            AlterColumn("dbo.User", "Id", c => c.Int(nullable: false, identity: true));
-            AlterColumn("dbo.User", "Name", c => c.String(nullable: false));
-            AlterColumn("dbo.User", "Email", c => c.String(nullable: false));
+
+            DropColumn("dbo.User", "Id");
+            AddColumn("dbo.User", "Id", c => c.Int(nullable: false, identity: true));
+
+            DropColumn("dbo.Like", "Id");
+            AddColumn("dbo.Like", "Id", c => c.Int(nullable: false));
+
+            DropColumn("dbo.Post", "Id");
+            AddColumn("dbo.Post", "Id", c => c.Int(nullable: false));
+
+            AlterColumn("dbo.User", "Name", c => c.String());
+            AlterColumn("dbo.User", "Email", c => c.String());
+
             AddPrimaryKey("dbo.User", "Id");
             CreateIndex("dbo.Like", "Id");
             CreateIndex("dbo.Post", "Id");

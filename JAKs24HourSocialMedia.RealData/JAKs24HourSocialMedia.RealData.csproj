@@ -74,6 +74,14 @@
     <Compile Include="Migrations\202009021901357_AddedOwnerId.designer.cs">
       <DependentUpon>202009021901357_AddedOwnerId.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009022039033_PleaseWork.cs" />
+    <Compile Include="Migrations\202009022039033_PleaseWork.designer.cs">
+      <DependentUpon>202009022039033_PleaseWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009022040345_ChangedFKNames.cs" />
+    <Compile Include="Migrations\202009022040345_ChangedFKNames.designer.cs">
+      <DependentUpon>202009022040345_ChangedFKNames.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -92,6 +100,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009021901357_AddedOwnerId.resx">
       <DependentUpon>202009021901357_AddedOwnerId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009022039033_PleaseWork.resx">
+      <DependentUpon>202009022039033_PleaseWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009022040345_ChangedFKNames.resx">
+      <DependentUpon>202009022040345_ChangedFKNames.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

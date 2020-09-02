@@ -15,7 +15,7 @@ namespace JAKs24HourSocialMedia.WebAPI.Controllers
     {
         private UserService CreateUserService()
         {
-            var userId = int.Parse(User.Identity.GetUserId());
+            var userId = Guid.Parse(User.Identity.GetUserId());
             var userService = new UserService(userId);
             return userService;
         }

@@ -207,7 +207,6 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\Controllers\AccountController.cs" />
-    <Compile Include="Controllers\Controllers\CommentController.cs" />
     <Compile Include="Controllers\Controllers\LikeController.cs" />
     <Compile Include="Controllers\Controllers\PostController.cs" />
     <Compile Include="Controllers\Controllers\UserController.cs" />

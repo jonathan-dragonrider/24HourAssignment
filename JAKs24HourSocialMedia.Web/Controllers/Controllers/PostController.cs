@@ -31,7 +31,7 @@ namespace JAKs24HourSocialMedia.WebAPI.Controllers
 
         private PostService CreatePostService()
         {
-            var userId = Guid.Parse(User.Identity.GetUserId());
+            var userId = int.Parse(User.Identity.GetUserId());
             var postService = new PostService(userId);
             return postService;
         }

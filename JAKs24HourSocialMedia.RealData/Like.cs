@@ -13,13 +13,15 @@ namespace JAKs24HourSocialMedia.RealData
         [Key]
         public int LikeId { get; set; }
 
+        [Required]
         [ForeignKey("Post")]
-        public int PostId { get; set; }//Bool?
-
-        [ForeignKey("User")]
-        public int UserId { get; set; }
+        public int PostId { get; set; }
+        public virtual Post Post { get; set; }
 
         [Required]
-        public User Liker { get; set; }//bool
+        [ForeignKey("User")]
+        public Guid Id { get; set; }
+        public virtual User User { get; set; }
+
     }
 }

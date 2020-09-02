@@ -10,7 +10,9 @@ namespace JAKs24HourSocialMedia.RealData
     public class User
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
+
+        public Guid OwnerId { get; set; }
 
         public string Name { get; set; }
 

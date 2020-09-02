@@ -19,7 +19,7 @@ namespace JAKs24HourSocialMedia.RealData
 
         [Required]
         [ForeignKey("User")]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public virtual User User { get; set; }
 
         public virtual List<Like> Likes { get; set; } = new List<Like>();

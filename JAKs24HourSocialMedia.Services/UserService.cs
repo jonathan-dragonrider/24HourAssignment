@@ -21,7 +21,7 @@ namespace JAKs24HourSocialMedia.Services
             var entity =
                 new User()
                 {
-                    Id= _userId,
+                    OwnerId= _userId,
                     Name = model.Name,
                     Email = model.Email,
                 };
@@ -44,7 +44,7 @@ namespace JAKs24HourSocialMedia.Services
                 var query =
                     ctx
                     .Users
-                    .Where(e => e.Id == _userId)
+                    .Where(e => e.OwnerId == _userId)
                     .Select(
                         e =>
                         new UserListItems
@@ -68,7 +68,7 @@ namespace JAKs24HourSocialMedia.Services
                 var entity =
                     ctx
                         .Users
-                        .Single(e => e.Id == _userId);
+                        .Single(e => e.OwnerId == _userId);
                 return
                     new UserDetails
                     {
@@ -80,14 +80,14 @@ namespace JAKs24HourSocialMedia.Services
             }
         }
 
-        public bool UpdateUser(UserEdit model)
+        public bool UpdateNote(UserEdit model)
         {
             using (var ctx = new ApplicationDbContext())
             {
                 var entity =
                     ctx
                         .Users
-                        .Single(e => e.Id == model.Id);
+                        .Single(e => e.Id == model.Id && e.OwnerId == _userId);
 
                 entity.Name = model.Name;
                 entity.Email = model.Email;
@@ -96,6 +96,7 @@ namespace JAKs24HourSocialMedia.Services
             }
         }
 
+
         public bool DeleteUser(int Id)
         {
             using (var ctx = new ApplicationDbContext())
@@ -103,7 +104,7 @@ namespace JAKs24HourSocialMedia.Services
                 var entity =
                     ctx
                         .Users
-                        .Single(e => e.Id == _userId);
+                        .Single(e => e.OwnerId == _userId);
 
                 ctx.Users.Remove(entity);
 

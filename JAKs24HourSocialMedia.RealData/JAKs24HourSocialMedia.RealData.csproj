@@ -70,6 +70,10 @@
     <Compile Include="Migrations\202009021735500_SecondAttempt.designer.cs">
       <DependentUpon>202009021735500_SecondAttempt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009021901357_AddedOwnerId.cs" />
+    <Compile Include="Migrations\202009021901357_AddedOwnerId.designer.cs">
+      <DependentUpon>202009021901357_AddedOwnerId.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -85,6 +89,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009021735500_SecondAttempt.resx">
       <DependentUpon>202009021735500_SecondAttempt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009021901357_AddedOwnerId.resx">
+      <DependentUpon>202009021901357_AddedOwnerId.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

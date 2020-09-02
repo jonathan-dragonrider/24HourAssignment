@@ -39,7 +39,7 @@ namespace JAKs24HourSocialMedia.WebAPI.Controllers
             return Ok();
         }
 
-        public IHttpActionResult Get(Guid id)
+        public IHttpActionResult Get(int id)
         {
             UserService userService = CreateUserService();
             var note = userService.GetUserById(id);
@@ -59,7 +59,7 @@ namespace JAKs24HourSocialMedia.WebAPI.Controllers
             return Ok();
         }
 
-        public IHttpActionResult Delete(Guid id)
+        public IHttpActionResult Delete(int id)
         {
             var service = CreateUserService();
 

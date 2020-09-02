@@ -53,14 +53,14 @@ namespace JAKs24HourSocialMedia.WebAPI.Controllers
 
         // (Put) Update
         [HttpPut]
-        public async Task<IHttpActionResult> UpdateComment([FromUri] int id, [FromBody] Comment updatedLike)
+        public async Task<IHttpActionResult> UpdateComment([FromUri] int id, [FromBody] Like updatedLike)
         {
             if (ModelState.IsValid)
             {
                 Like like = await _context.Likes.FindAsync(id);
                 if (like != null)
                 {
-                    like.Liker = updatedLike.Liker;
+                    like.Id = updatedLike.Id;
 
                     await _context.SaveChangesAsync();
                     return Ok();

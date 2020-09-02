@@ -61,7 +61,7 @@ namespace JAKs24HourSocialMedia.Services
 
         }
 
-        public UserDetails GetUserById(Guid id)
+        public UserDetails GetUserById(int id)
         {
             using (var ctx = new ApplicationDbContext())
             {
@@ -96,7 +96,7 @@ namespace JAKs24HourSocialMedia.Services
             }
         }
 
-        public bool DeleteUser(Guid Id)
+        public bool DeleteUser(int Id)
         {
             using (var ctx = new ApplicationDbContext())
             {

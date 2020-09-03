@@ -63,18 +63,14 @@
     <Compile Include="CommentService.cs" />
     <Compile Include="LikeService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-<<<<<<< HEAD
     <Compile Include="ReplyService.cs" />
     <Compile Include="UserService.cs" />
     <Compile Include="PostService.cs" />
-=======
->>>>>>> 05e9c663ada9b5ad424f505f670a7d2db58298ff
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
-<<<<<<< HEAD
   <ItemGroup>
     <ProjectReference Include="..\JAKs24HourSocialMedia.Models\JAKs24HourSocialMedia.Models.csproj">
       <Project>{14635309-e774-4462-936e-3e5596cf27e6}</Project>
@@ -90,8 +86,6 @@
       <Name>JAKs24HourSocialMedia.RealData</Name>
     </ProjectReference>
   </ItemGroup>
-=======
->>>>>>> 05e9c663ada9b5ad424f505f670a7d2db58298ff
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>

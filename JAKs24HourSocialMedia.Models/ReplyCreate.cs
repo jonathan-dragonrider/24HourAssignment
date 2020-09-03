@@ -7,10 +7,10 @@ using System.Threading.Tasks;
 
 namespace JAKs24HourSocialMedia.Models
 {
-    public class CommentCreate
+    public class ReplyCreate
     {
         [Required]
-        public int PostId { get; set; }
+        public int CommentId { get; set; }
 
         [Required]
         [MaxLength(8000, ErrorMessage = "Max length 8000 characters.")]

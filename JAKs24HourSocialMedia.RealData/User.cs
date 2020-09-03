@@ -10,7 +10,9 @@ namespace JAKs24HourSocialMedia.RealData
     public class User
     {
         [Key]
-        public Guid Id { get; set; }
+        public int Id { get; set; }
+
+        public Guid OwnerId { get; set; }
 
         public string Name { get; set; }
 
@@ -18,5 +20,8 @@ namespace JAKs24HourSocialMedia.RealData
 
         public virtual List<Post> Posts { get; set; } = new List<Post>();
         public virtual List<Like> Likes { get; set; } = new List<Like>();
+        public virtual List<Comment> Comments { get; set; } = new List<Comment>();
+        public virtual List<Reply> Replies { get; set; } = new List<Reply>();
+
     }
 }

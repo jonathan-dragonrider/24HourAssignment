@@ -39,6 +39,11 @@ namespace JAKs24HourSocialMedia.RealData
 
         public DbSet<User> Users { get; set; }
 
+        public DbSet<Comment> Comments { get; set; }
+
+        public DbSet<Reply> Replies { get; set; }
+
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

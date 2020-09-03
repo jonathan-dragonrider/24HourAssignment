@@ -60,6 +60,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Comment.cs" />
     <Compile Include="IdentityModels.cs" />
     <Compile Include="Like.cs" />
     <Compile Include="Migrations\202009021401075_FirstMigration.cs" />
@@ -70,9 +71,26 @@
     <Compile Include="Migrations\202009021735500_SecondAttempt.designer.cs">
       <DependentUpon>202009021735500_SecondAttempt.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202009021901357_AddedOwnerId.cs" />
+    <Compile Include="Migrations\202009021901357_AddedOwnerId.designer.cs">
+      <DependentUpon>202009021901357_AddedOwnerId.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009022039033_PleaseWork.cs" />
+    <Compile Include="Migrations\202009022039033_PleaseWork.designer.cs">
+      <DependentUpon>202009022039033_PleaseWork.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009022040345_ChangedFKNames.cs" />
+    <Compile Include="Migrations\202009022040345_ChangedFKNames.designer.cs">
+      <DependentUpon>202009022040345_ChangedFKNames.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202009031157166_AddedCommentAndReply.cs" />
+    <Compile Include="Migrations\202009031157166_AddedCommentAndReply.designer.cs">
+      <DependentUpon>202009031157166_AddedCommentAndReply.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Post.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Reply.cs" />
     <Compile Include="User.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -85,6 +103,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202009021735500_SecondAttempt.resx">
       <DependentUpon>202009021735500_SecondAttempt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009021901357_AddedOwnerId.resx">
+      <DependentUpon>202009021901357_AddedOwnerId.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009022039033_PleaseWork.resx">
+      <DependentUpon>202009022039033_PleaseWork.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009022040345_ChangedFKNames.resx">
+      <DependentUpon>202009022040345_ChangedFKNames.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202009031157166_AddedCommentAndReply.resx">
+      <DependentUpon>202009031157166_AddedCommentAndReply.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

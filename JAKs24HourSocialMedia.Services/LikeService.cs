@@ -10,20 +10,17 @@ namespace JAKs24HourSocialMedia.Services
 {
     public class LikeService
     {
-        private readonly Guid _id;
-        private readonly int _postid;
-        public LikeService(Guid userId, int postId)
+        private readonly int _id;
+        public LikeService(int userId)
         {
             _id = userId;
-            _postid = postId;
-
         }
         public bool CreateLike(LikeCreate model)
         {
             var entity = new Like()
             {
-                PostId = _postid,
-                Id = _id
+                PostId = model.LikedPostId,
+                UserId = _id
             };
 
             using (var ctx = new ApplicationDbContext())

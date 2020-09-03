@@ -6,11 +6,9 @@ using System.Threading.Tasks;
 
 namespace JAKs24HourSocialMedia.Models
 {
-   public class UserListItems
+    public class ReplyListItem
     {
-        public int Id { get; set; }
-        public string Name { get; set; }
-
-        public string Email { get; set; }
+        public int ReplyId { get; set; }
+        public string Text { get; set; }
     }
 }

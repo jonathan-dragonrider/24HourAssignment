@@ -66,12 +66,15 @@
     <Compile Include="LikeListItems.cs" />
     <Compile Include="PostListItem.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+<<<<<<< HEAD
     <Compile Include="CreateUser.cs" />
     <Compile Include="ReplyCreate.cs" />
     <Compile Include="ReplyListItem.cs" />
     <Compile Include="UserDetails.cs" />
     <Compile Include="UserListItems.cs" />
     <Compile Include="PostCreate.cs" />
+=======
+>>>>>>> 05e9c663ada9b5ad424f505f670a7d2db58298ff
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

@@ -216,9 +216,12 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\CommentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+<<<<<<< HEAD
     <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Controllers\LikeController.cs" />
     <Compile Include="Controllers\PostController.cs" />
+=======
+>>>>>>> 05e9c663ada9b5ad424f505f670a7d2db58298ff
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

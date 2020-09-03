@@ -37,6 +37,7 @@ namespace JAKs24HourSocialMedia.RealData
 
         public DbSet<Like> Likes { get; set; }
 
+<<<<<<< HEAD:JAKs24HourSocialMedia.RealData/IdentityModels.cs
         public DbSet<User> Users { get; set; }
 
         public DbSet<Comment> Comments { get; set; }
@@ -44,6 +45,8 @@ namespace JAKs24HourSocialMedia.RealData
         public DbSet<Reply> Replies { get; set; }
 
 
+=======
+>>>>>>> 05e9c663ada9b5ad424f505f670a7d2db58298ff:JAKs24HourSocialMedia.Data/IdentityModels.cs
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             modelBuilder

@@ -68,7 +68,7 @@ namespace JAKs24HourSocialMedia.Services
                 var entity =
                     ctx
                         .Users
-                        .Single(e => e.OwnerId == _userId);
+                        .Single(e => e.Id == id);
                 return
                     new UserDetails
                     {

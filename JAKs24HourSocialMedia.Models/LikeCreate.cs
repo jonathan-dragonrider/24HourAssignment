@@ -12,9 +12,9 @@ namespace JAKs24HourSocialMedia.Models
     public class LikeCreate
     {
         [Required]
-        public Post likedPost { get; set; }
+        public int LikedPostId { get; set; }
 
         [Required]
-        public User Like { get; set; }
+        public int LikerId { get; set; }
     }
 }

@@ -8,19 +8,19 @@ namespace JAKs24HourSocialMedia.WebAPI.Controllers
 {
     public class PostController : ApiController
     {
-        public IHttpActionResult Get()
+        public IHttpActionResult Get(int id)
         {
-            var service = CreatePostService();
+            var service = CreatePostService(id);
             var posts = service.GetPosts();
             return Ok(posts);
         }
 
-        public IHttpActionResult Post(PostCreate post)
+        public IHttpActionResult Post(PostCreate post, int id)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
 
-            var service = CreatePostService();
+            var service = CreatePostService(id);
 
             if (!service.CreatePost(post))
                 return InternalServerError();
@@ -29,9 +29,8 @@ namespace JAKs24HourSocialMedia.WebAPI.Controllers
            
         }
 
-        private PostService CreatePostService()
+        private PostService CreatePostService(int userId)
         {
-            var userId = int.Parse(User.Identity.GetUserId());
             var postService = new PostService(userId);
             return postService;
         }

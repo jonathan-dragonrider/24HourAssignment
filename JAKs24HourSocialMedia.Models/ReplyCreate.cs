@@ -1,6 +1,4 @@
-﻿using JAKs24HourSocialMedia.RealData;
-using Microsoft.AspNet.Identity;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
@@ -9,12 +7,13 @@ using System.Threading.Tasks;
 
 namespace JAKs24HourSocialMedia.Models
 {
-    public class LikeCreate
+    public class ReplyCreate
     {
         [Required]
-        public int LikedPostId { get; set; }
+        public int CommentId { get; set; }
 
         [Required]
-        public int LikerId { get; set; }
+        [MaxLength(8000, ErrorMessage = "Max length 8000 characters.")]
+        public string Text { get; set; }
     }
 }

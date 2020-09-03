@@ -8,7 +8,7 @@ namespace JAKs24HourSocialMedia.Models
 {
     public class UserDetails
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Name { get; set; }
         public string Email { get; set; }
     }

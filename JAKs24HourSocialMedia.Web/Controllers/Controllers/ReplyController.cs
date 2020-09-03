@@ -1,21 +1,23 @@
 ﻿using JAKs24HourSocialMedia.Models;
 using JAKs24HourSocialMedia.Services;
-using Microsoft.AspNet.Identity;
 using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Net;
+using System.Net.Http;
 using System.Web.Http;
 
-namespace JAKs24HourSocialMedia.WebAPI.Controllers
+namespace JAKs24HourSocialMedia.Web.Controllers.Controllers
 {
-    public class PostController : ApiController
+    public class ReplyController : ApiController
     {
         public IHttpActionResult Get(int id)
         {
             var service = CreatePostService(id);
-            var posts = service.GetPosts();
+            var posts = service.GetReplies();
             return Ok(posts);
         }
-
-        public IHttpActionResult Post(PostCreate post, int id)
+        public IHttpActionResult Post(ReplyCreate post, int id)
         {
             if (!ModelState.IsValid)
                 return BadRequest(ModelState);
@@ -26,13 +28,13 @@ namespace JAKs24HourSocialMedia.WebAPI.Controllers
                 return InternalServerError();
 
             return Ok();
-           
+
         }
 
-        private PostService CreatePostService(int userId)
+        private ReplyService CreatePostService(int userId)
         {
-            var postService = new PostService(userId);
-            return postService;
+            var replyService = new ReplyService(userId);
+            return replyService;
         }
     }
 }

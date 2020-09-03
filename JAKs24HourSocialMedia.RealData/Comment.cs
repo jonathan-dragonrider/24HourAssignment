@@ -8,22 +8,22 @@ using System.Threading.Tasks;
 
 namespace JAKs24HourSocialMedia.RealData
 {
-    public class Post
+    public class Comment
     {
         [Key]
-        public int PostId { get; set; }
-
-        public string Title { get; set; }
+        public int CommentId { get; set; }
 
         public string Text { get; set; }
 
-        [Required]
-        [ForeignKey("User")]
+        [ForeignKey(nameof(Author))]
         public int UserId { get; set; }
-        public virtual User User { get; set; }
+        public virtual User Author { get; set; }
 
-        public virtual List<Like> Likes { get; set; } = new List<Like>();
-        public virtual List<Comment> Comments { get; set; } = new List<Comment>();
+        [ForeignKey(nameof(CommentPost))]
+        public int PostId { get; set; }
+        public virtual Post CommentPost { get; set; }
+
+        public virtual List<Reply> Replies { get; set; } = new List<Reply>();
 
     }
 }
